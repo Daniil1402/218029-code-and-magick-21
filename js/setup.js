@@ -7,8 +7,11 @@ var setup = document.querySelector(`.setup`);
 var setupClose = setup.querySelector(`.setup-close`);
 var userNameInput = document.querySelector(`.setup-user-name`);
 
+var keyEscape = `Escape`;
+var keyEnter = `Enter`;
+
 var onPopupEscPress = function (evt) {
-  if (evt.key === `Escape` && userNameInput !== document.activeElement) {
+  if (evt.key === keyEscape && userNameInput !== document.activeElement) {
     evt.preventDefault();
     closePopup();
   }
@@ -31,7 +34,7 @@ setupOpen.addEventListener(`click`, function () {
 });
 
 setupOpen.addEventListener(`keydown`, function (evt) {
-  if (evt.key === `Enter`) {
+  if (evt.key === keyEnter) {
     openPopup();
   }
 });
@@ -41,7 +44,7 @@ setupClose.addEventListener(`click`, function () {
 });
 
 setupClose.addEventListener(`keydown`, function (evt) {
-  if (evt.key === `Enter`) {
+  if (evt.key === keyEnter) {
     closePopup();
   }
 });
@@ -58,11 +61,11 @@ userNameInput.addEventListener(`input`, function () {
 
   if (valueLength < MIN_NAME_LENGTH) {
     userNameInput.setCustomValidity(
-        `Ещё ` + (MIN_NAME_LENGTH - valueLength) + ` симв.`
+      `Ещё ` + (MIN_NAME_LENGTH - valueLength) + ` симв.`
     );
   } else if (valueLength > MAX_NAME_LENGTH) {
     userNameInput.setCustomValidity(
-        `Удалите лишние ` + (valueLength - MAX_NAME_LENGTH) + ` симв.`
+      `Удалите лишние ` + (valueLength - MAX_NAME_LENGTH) + ` симв.`
     );
   } else {
     userNameInput.setCustomValidity(``);
