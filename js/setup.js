@@ -75,11 +75,11 @@ userNameInput.addEventListener(`input`, function () {
 
 // Изменение цветов
 var setupWizard = document.querySelector(`.setup-wizard`);
-var wizardCoat = setupWizard.querySelector(`.wizard-coat`);
-var wizardEyes = setupWizard.querySelector(`.wizard-eyes`);
+var wizardCoatElement = setupWizard.querySelector(`.wizard-coat`);
+var wizardEyesElement = setupWizard.querySelector(`.wizard-eyes`);
 var setupFireballWrap = document.querySelector(`.setup-fireball-wrap`);
 
-var COAT_COLORS = [
+var WIZARD_COAT_COLORS = [
   `rgb(101, 137, 164)`,
   `rgb(241, 43, 107)`,
   `rgb(146, 100, 161)`,
@@ -88,17 +88,17 @@ var COAT_COLORS = [
   `rgb(0, 0, 0)`,
 ];
 
-wizardCoat.addEventListener(`click`, function () {
-  wizardCoat.style = `fill: ${
-    COAT_COLORS[createRandNumber(0, COAT_COLORS.length - 1)]
+wizardCoatElement.addEventListener(`click`, function () {
+  wizardCoatElement.style = `fill: ${
+    WIZARD_COAT_COLORS[createRandNumber(0, WIZARD_COAT_COLORS.length - 1)]
   };`;
 });
 
-var WIZARD_EYES_COLOR = [`black`, `red`, `blue`, `yellow`, `green`];
+var WIZARD_EYES_COLORS = [`black`, `red`, `blue`, `yellow`, `green`];
 
-wizardEyes.addEventListener(`click`, function () {
-  wizardEyes.style = `fill: ${
-    WIZARD_EYES_COLOR[createRandNumber(0, WIZARD_EYES_COLOR.length - 1)]
+wizardEyesElement.addEventListener(`click`, function () {
+  wizardEyesElement.style = `fill: ${
+    WIZARD_EYES_COLORS[createRandNumber(0, WIZARD_EYES_COLORS.length - 1)]
   };`;
 });
 
@@ -134,15 +134,6 @@ var WIZARD_SECOND_NAMES = [
   `Ирвинг`,
 ];
 
-var WIZARD_COAT_COLOR = [
-  `rgb(101, 137, 164)`,
-  `rgb(241, 43, 107)`,
-  `rgb(146, 100, 161)`,
-  `rgb(56, 159, 117)`,
-  `rgb(215, 210, 55)`,
-  `rgb(0, 0, 0)`,
-];
-
 var similarListElement = setup.querySelector(`.setup-similar-list`);
 
 var similarWizardTemplate = document
@@ -161,9 +152,9 @@ var wizards = [
       ` ` +
       WIZARD_SECOND_NAMES[createRandNumber(0, WIZARD_NAMES.length - 1)],
     coatColor:
-      WIZARD_COAT_COLOR[createRandNumber(0, WIZARD_COAT_COLOR.length - 1)],
+      WIZARD_COAT_COLORS[createRandNumber(0, WIZARD_COAT_COLORS.length - 1)],
     eyesColor:
-      WIZARD_EYES_COLOR[createRandNumber(0, WIZARD_EYES_COLOR.length - 1)],
+      WIZARD_EYES_COLORS[createRandNumber(0, WIZARD_EYES_COLORS.length - 1)],
   },
   {
     name:
@@ -171,9 +162,9 @@ var wizards = [
       ` ` +
       WIZARD_SECOND_NAMES[createRandNumber(0, WIZARD_NAMES.length - 1)],
     coatColor:
-      WIZARD_COAT_COLOR[createRandNumber(0, WIZARD_COAT_COLOR.length - 1)],
+      WIZARD_COAT_COLORS[createRandNumber(0, WIZARD_COAT_COLORS.length - 1)],
     eyesColor:
-      WIZARD_EYES_COLOR[createRandNumber(0, WIZARD_EYES_COLOR.length - 1)],
+      WIZARD_EYES_COLORS[createRandNumber(0, WIZARD_EYES_COLORS.length - 1)],
   },
   {
     name:
@@ -181,9 +172,9 @@ var wizards = [
       ` ` +
       WIZARD_SECOND_NAMES[createRandNumber(0, WIZARD_NAMES.length - 1)],
     coatColor:
-      WIZARD_COAT_COLOR[createRandNumber(0, WIZARD_COAT_COLOR.length - 1)],
+      WIZARD_COAT_COLORS[createRandNumber(0, WIZARD_COAT_COLORS.length - 1)],
     eyesColor:
-      WIZARD_EYES_COLOR[createRandNumber(0, WIZARD_EYES_COLOR.length - 1)],
+      WIZARD_EYES_COLORS[createRandNumber(0, WIZARD_EYES_COLORS.length - 1)],
   },
   {
     name:
@@ -191,9 +182,9 @@ var wizards = [
       ` ` +
       WIZARD_SECOND_NAMES[createRandNumber(0, WIZARD_NAMES.length - 1)],
     coatColor:
-      WIZARD_COAT_COLOR[createRandNumber(0, WIZARD_COAT_COLOR.length - 1)],
+      WIZARD_COAT_COLORS[createRandNumber(0, WIZARD_COAT_COLORS.length - 1)],
     eyesColor:
-      WIZARD_EYES_COLOR[createRandNumber(0, WIZARD_EYES_COLOR.length - 1)],
+      WIZARD_EYES_COLORS[createRandNumber(0, WIZARD_EYES_COLORS.length - 1)],
   },
 ];
 
