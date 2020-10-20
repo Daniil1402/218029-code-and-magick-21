@@ -22,9 +22,9 @@ var drawText = function (ctx, text, x, y) {
 };
 
 var getMaxElement = function (arr) {
-  let maxElement = arr[0];
+  var maxElement = arr[0];
 
-  for (let i = 1; i < arr.length; i++) {
+  for (var i = 1; i < arr.length; i++) {
     if (arr[i] > maxElement) {
       maxElement = arr[i];
     }
@@ -45,9 +45,9 @@ window.renderStatistics = function (ctx, players, times) {
       CLOUD_Y + GAP * 1.5 + FONT_GAP
   );
 
-  let maxTime = getMaxElement(times);
+  var maxTime = getMaxElement(times);
 
-  for (let i = 0; i < players.length; i++) {
+  for (var i = 0; i < players.length; i++) {
     ctx.fillStyle = `black`;
     ctx.fillText(
         players[i],
@@ -67,11 +67,11 @@ window.renderStatistics = function (ctx, players, times) {
     if (players[i] === `Вы`) {
       ctx.fillStyle = `rgba(255, 0, 0, 1)`;
     } else {
-      let createColor = function (min, max) {
-        let rand = min - 0.5 + Math.random() * (max - min + 1);
+      var createColor = function (min, max) {
+        var rand = min - 0.5 + Math.random() * (max - min + 1);
         return Math.round(rand);
       };
-      let transparency = createColor(1, 100) + `%`;
+      var transparency = createColor(1, 100) + `%`;
       ctx.fillStyle = `hsl(246, ${transparency}, 50%)`;
     }
 
