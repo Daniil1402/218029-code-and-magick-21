@@ -42,4 +42,14 @@
   setupClose.addEventListener(`keydown`, function (evt) {
     window.util.isEnterEvent(evt, closePopup);
   });
+
+  var form = setup.querySelector(".setup-wizard-form");
+
+  var submitHandler = function (evt) {
+    window.backend.save(new FormData(form), function () {
+      setup.classList.add("hidden");
+    });
+    evt.preventDefault();
+  };
+  form.addEventListener("submit", submitHandler);
 })();
